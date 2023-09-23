@@ -1,0 +1,19 @@
+
+:root {
+  --theme: #a2647e;
+  --white: #fdfbfc;
+  --black: #090406;
+  --light: #f0e8eb;
+  --dark: #1b1014;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
