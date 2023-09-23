@@ -56,8 +56,9 @@ app.get('/home', (req, res) => {
 
 app.post('/login', (req, res) => {
     const {acc_email, acc_pass} = req.body
-    const sql = `select * from account where acc_email=? and acc_pass=?`
-    conn.query(sql, [acc_email, acc_pass], (err, result) => {
+    const sql = `select * from account where acc_email='${acc_email}' and acc_pass='${acc_pass}'`
+    conn.query(sql, (err, result) => {
+        console.log(result)
         if (err) {
             res.json({error: err, statuscode:401})
         }

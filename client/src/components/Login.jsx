@@ -4,19 +4,19 @@ import axios from 'axios'
 
 const Login = () => {
     const server = 'http://localhost:5050'
-    const [acc, setAcc] = useState()
+    const [acc, setAcc] = useState({})
     let name, value
 
     const hndlchng = (e) => {
         name = e.target.name
         value = e.target.value
-        setAcc({...acc, [name]:[value]})
+        setAcc({...acc, [name]:value})
     }
 
     const hndlsub = async (e) => {
         const {acc_email, acc_pass} = acc
         e.preventDefault()
-        const res = await axios.post(`${server}/login`)
+        const res = await axios.post(`${server}/login`, {acc_email, acc_pass})
         const data = await res.data
         console.log(data)
     }
